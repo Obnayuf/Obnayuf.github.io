@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="矩阵论第二节, Obnay">
+    <meta name="keywords" content="矩阵论第三节, Obnay">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>矩阵论第二节 | Obnay</title>
+    <title>矩阵论第三节 | Obnay</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">矩阵论第二节</h1>
+                    <h1 class="description center-align post-title">矩阵论第三节</h1>
                 </div>
             </div>
         </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-18
+                    2021-11-30
                 </div>
                 
 
@@ -477,89 +477,74 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第二章-线性映射及线性变换"><a href="#第二章-线性映射及线性变换" class="headerlink" title="第二章 线性映射及线性变换"></a>第二章 线性映射及线性变换</h1><p>上一章中给出了线性空间的定义，这里在强调一遍，通俗的理解就是针对一个域P(PS: P是一个包含0和1的数集，且P中的任意两个数加减乘除后仍是P中的数)（有理数Q，实数R，复数C），存在一个集合S使得S上有加法运算，且P中的一个数使得$P\times S→S$,也就是说这个空间要满足加法和数乘，则S可以称为线性空间也叫向量空间。</p>
-<p>线性空间中的元素可以有多种，比方说是矩阵m x n，一元多项式，n维向量…….</p>
-<p>此外，再给出维数，定义是线性空间中线性无关向量的最大个数。</p>
-<p>这里给出几个证明：</p>
-<p>对于分量属于数域P的全体n维向量构成的线性空间，如果我们能找到n个线性无关的向量，且这些向量可以表示我们线性空间中的任一向量则说明dim=n，（这是证明逻辑）。</p>
-<p>因此，给出</p>
-<p>$$<br>x_1=[1,0,0,…]^T_{n\times1},x_2=[0,1,0,…]^T_{n\times1},\cdots<br>$$<br>则非常清晰的可以推断，对于任何的一个n维向量我们都可以用$x_1,x_2\cdots x_n$来表示，因此维数是n.</p>
-<p>对于分量属于数域P的全体矩阵$m\times n$构成的线性空间S，我们也可以尝试去证明，假设$m=2,n=3$则我们可以得到<br>$$<br>x_1=\left[<br> \begin{matrix}<br>   1 &amp; 0 &amp; 0 \<br>   0 &amp; 0 &amp; 0<br>  \end{matrix}<br>  \right]<br>x_2=\left[<br>\begin{matrix}<br> 0 &amp; 1 &amp; 0 \<br> 0 &amp; 0 &amp; 0<br> \end{matrix}<br> \right]<br> x_3=\left[<br> \begin{matrix}<br>   0 &amp; 0 &amp; 1 \<br>   0 &amp; 0 &amp; 0<br>  \end{matrix}<br>  \right]<br>$$</p>
-<p>$$<br>x_4=\left[<br> \begin{matrix}<br>   0 &amp; 0 &amp; 0 \<br>   1 &amp; 0 &amp; 0<br>  \end{matrix}<br>  \right]<br>  x_5=\left[<br> \begin{matrix}<br>   0 &amp; 0 &amp; 0 \<br>   0 &amp; 1 &amp; 0<br>  \end{matrix}<br>  \right]<br>  x_6=\left[<br> \begin{matrix}<br>   0 &amp; 0 &amp; 0 \<br>   0 &amp; 0 &amp; 1<br>  \end{matrix}<br>  \right]<br>$$</p>
-<p>则我们可以发现任何一个$2\times3$的矩阵我们都可以用上述6个矩阵表示，因此知道该空间维数是$2\times 3$</p>
-<p>这里特殊给出一个无限维空间的例子,（据说是泛函分析中存在无限维赋范线性空间）这里是一个数域P上一元多项式的全体作成的线性空间。</p>
-<p>这里我的理解是反证法去理解，假设说这个空间是n维的<br>$$<br>\exists x_1=1，x_2=x,x_3=x^2,\cdots,x_{n+1}=x^n,<br>$$<br>由上面可知，我们找到了n+1个线性无关的向量，则延伸到无限维度。</p>
-<h2 id="2-1线性映射及矩阵"><a href="#2-1线性映射及矩阵" class="headerlink" title="2.1线性映射及矩阵"></a>2.1线性映射及矩阵</h2><p>给出定义：</p>
-<p><img src="/2021/11/18/secondcnm/1.PNG" alt="1"></p>
-<p>满足线性的一种线性空间间的变换。</p>
-<p>为什么是同一域呢？现在明白一点了，因为实数怎么运算（加法和乘法）也得不出复数。</p>
-<p><strong>下面是重点：</strong></p>
-<p><img src="/2021/11/18/secondcnm/2.PNG" alt="2"></p>
-<p>首先，解释一下第一个公式，他的意思是我在$V_1$中找一组基，对其中的每一个基向量进行线性映射时发现，映射过去的向量可以由$a_{11},a_{21},a_{31},\cdots,a_{m1}$这些实数配合$V_2$中的一组基来表示，由此导出一个基到基的一种线性关系，我们称之为矩阵。</p>
-<p>第二：是我的总结，一个线性空间中，基是它的灵魂，它就是靠基活着的，基也是它最核心的，但一个线性空间中可以有很多组基，同时线性空间中的元素一定是可以由基表示出来的，因此我们可以得出结论：对于线性映射我们一定可以用一个矩阵来表示，但随着两方基取的不同，我们也可以得到不唯一的矩阵，这也就说明了我们有矩阵变换这种说法。</p>
-<p>第三：顺理成章的，我们可以得出一个推断：因为矩阵虽然不唯一但是他们都是表征这两个线性空间的映射的，区别只是因为在空间中的基的选取，为此，我们需要定义一种变换，是同一空间中基到基的变化，我们也称之为过渡矩阵。这里呢，我们也可以认为他是一种映射，只不过是两个相同的空间，但由后续的知识，我们知道，这是一种变换。如下：<img src="/2021/11/18/secondcnm/3.PNG" alt="3"></p>
-<p>现在我们有了同一空间中基到基的线性变换的过渡矩阵，也有了不同空间中基到基的线性映射的矩阵，因此我们需要知道，对于不同空间中不同的基所生成的线性映射之间的矩阵之间存在什么样的关系为此，我们给出了下面的定义：</p>
-<p><img src="/2021/11/18/secondcnm/4.PNG" alt="4"></p>
-<p>下面：</p>
-<p><img src="/2021/11/18/secondcnm/5.PNG" alt="5"></p>
-<p>这个就有点废话了，这里面就说了一些性质，两个矩阵$A,B$等价，不用想也知道对于两个线性空间如果有不同基下的两组映射，他们肯定是等价的，这表明了两个空间之间的关系。</p>
-<p>而上面的定理，我们要注意他是针对$P_{m\times n}$的，也就是说我们现在不带空间了，就看矩阵这个东西，相当于就看矩阵这个东西的性质，因此我们也把$P^{-1}$变成了$P$,因为我们此时没法保证$P$一定可逆，我们给出了矩阵等价的条件。    </p>
-<p>同样也给出任何一个矩阵在rank大等于1的条件下，也可以推出定理2.1.10</p>
-<p>因此接着也可以得出定理2.1.11，相同的rank就可以推出矩阵相等价</p>
-<h2 id="2-2矩阵的值域与核"><a href="#2-2矩阵的值域与核" class="headerlink" title="2.2矩阵的值域与核"></a>2.2矩阵的值域与核</h2><p>注意：由于一个矩阵的定义是要依靠两个线性空间的基给出的</p>
-<p><img src="/2021/11/18/secondcnm/6.PNG" alt="6"></p>
-<p>可以看出对于$V_1 $中的向量$\alpha$，此时矩阵是给定的$A$,但是$\alpha$可以有很多，此时映射过去后的值构成了值域，其实这个也很好理解，这里简单说一下就是对于$\alpha$,我们一定可以用$V_1 $下的一组基表示出来，即$\alpha=\sum \limits_{i=1}^Nx_i\epsilon_i$，此时我们进行映射，$\mathcal{A}(\alpha)=\sum \limits_{i=1}^Nx_i\mathcal{A}({\epsilon_i})$,因此我们可以得出一组$V_2$下的基经过线性组合形成的空间，这也就是值域</p>
-<p>同理，若对于$V_1 $中的向量$\alpha$，存在某个矩阵$A$使映射后的向量为0向量，也叫$\theta$向量，这个$\alpha $构成的集合叫核也叫零空间。</p>
-<p><img src="/2021/11/18/secondcnm/7.PNG" alt="7"></p>
-<p>这里，给出子空间的定义，对于$V$中的一个非空子集$W$，若这个非空子集对与加法和关于$P$的数乘封闭，则可以得到$W$是一个子空间</p>
-<p><img src="/2021/11/18/secondcnm/8.PNG" alt="8"></p>
-<p>先给出span的定义，$span(x_1,x_2,\cdots,x_n)=k_1x_1+k_2x_2+\cdots+k_nx_n$</p>
-<p>即一种线性组合，对于（1）上面值域那里给出了证明，接着</p>
-<p>下面的证明，我选择用一道题解释，</p>
-<p><img src="/2021/11/18/secondcnm/9.PNG" alt="9"></p>
-<h2 id="2-3-线性变换"><a href="#2-3-线性变换" class="headerlink" title="2.3 线性变换"></a>2.3 线性变换</h2><p>是一个$V→V$的线性映射，即自己到自己，这时矩阵$A$是个方阵</p>
-<p>矩阵多项式的定义：</p>
-<p><img src="/2021/11/18/secondcnm/10.PNG" alt="10"></p>
-<p>同理，有：</p>
-<p><img src="/2021/11/18/secondcnm/11.PNG" alt="11"></p>
-<h2 id="2-4-特征值和特征向量"><a href="#2-4-特征值和特征向量" class="headerlink" title="2.4 特征值和特征向量"></a>2.4 特征值和特征向量</h2><p><img src="/2021/11/18/secondcnm/12.PNG" alt="12"></p>
-<p>这里可以得到特征值和特征向量的定义，常微分线性齐次方程组只有在满rank时才有非零解。</p>
-<p><img src="/2021/11/18/secondcnm/13.PNG" alt="13"></p>
-<p>特征值相当于空间中的一个点，找到对应距离原点最远的点的距离。</p>
-<p>接下来是大量的定义，这些我都觉得时规则类的东西，就也没什么好解释的，首先给出了迹trace:</p>
-<p><img src="/2021/11/18/secondcnm/14.PNG" alt="14"></p>
-<p>接着是特征子空间，几何重数，代数重数：</p>
-<p><img src="/2021/11/18/secondcnm/15.PNG" alt="15"></p>
-<p>这个里面要记住这个特征子空间应该是多个，因为矩阵会有多个特征值.</p>
-<p><strong>下面给出一个总结：</strong></p>
-<p><u>1.矩阵相抵是针对$m*n$的矩阵的，定义是若存在$B=PAQ$,其中$P,Q$分别是m阶和n阶的方阵且非奇异，我们可以称A和B相抵。</u></p>
-<p><u>2.矩阵相似是针对$n*n$的方阵的，定义是若存在$B=P^{-1}AP$,就说明A和B相似</u></p>
-<p>下面是对角化：</p>
-<p><img src="/2021/11/18/secondcnm/16.PNG" alt="16 "></p>
-<p>这里可以发现可对角化就是说矩阵相似于对角阵，且A有n个线性无关的特征向量或A有n个线性无关的特征值都课推出可对角化。</p>
-<p>下面有给出了一个新东西，是不同空间之间的：</p>
-<p><img src="/2021/11/18/secondcnm/17.PNG" alt="17"></p>
-<p>首先，先说明这个概念是怎么来的，本质上，空间是集合，集合就存在交集和并集，先想交集，即$V_1\bigcap V_2$,很容易就能想到，假设$\exists\alpha,\beta\in V_1\bigcap V_2$,则我们可以知道，因为$\alpha,\beta\in V_1$,又有$\alpha,\beta\in V_2$,因为这两个空间内的元素满足加法和数乘封闭，所以他们的加法和即$\alpha+\beta\in V_1$又有$\alpha+\beta\in V_2$，因此呀他们的和也$\alpha+\beta\in V_1\bigcap V_2$. 但是对于并集则不一定，想一个简单的场景，V是一个三维坐标系下的空间，$V_1$和$V_2$,是两个平面比方说是xy平面和xz平面，这样的他们的并集就是这两个面上所有的元素，但是我现在在里面选两个元素（0，1，0）和（0，0，1）则他们两个相加的向量位于yz平面不在原有的两个平面上了，因此并集之后不一定是V的子空间了。</p>
-<p>为此，我们想了个定义叫直和用来表示空间的和，这也很好理解，就是你在三维空间中随便找两个向量，他们两个的和向量也肯定在这个空间内。</p>
-<p>接着这个给了两个定义：</p>
-<p><img src="/2021/11/18/secondcnm/18.PNG" alt="18"></p>
-<p>重头戏来了：</p>
-<h2 id="2-5不变子空间"><a href="#2-5不变子空间" class="headerlink" title="2.5不变子空间"></a>2.5不变子空间</h2><p>上面子空间的定义是没有结合矩阵的，只要求乘法和数乘封闭，也就是说子空间是相当于线性空间的，接下来我们要求加上一种运算，即线性变化$A$。</p>
-<p><img src="/2021/11/18/secondcnm/19.PNG" alt="19"></p>
-<p>这里是这样的，我们可以认为若对于一种运算，空间内的元素经过运算后，结果仍然在该元素内，就说明这个子空间是关于这个运算的不变子空间。</p>
-<p><strong>注意：</strong>1.前提是他已经是子空间了。2.不变子空间是要带着运算的3.整个线性空间是线性变换A最大的不变子空间，因为定义线性变换时就要求了其变换后的结果也$\exists V$,对于0来说，其运算结果依然是0，而所有空间中都会有0，这也是定义。</p>
-<p>ps：这里面还有好多定理，但我觉得这只是证明的问题，书上也都有些，这里就不放了</p>
-<h2 id="2-6酉变换与酉矩阵"><a href="#2-6酉变换与酉矩阵" class="headerlink" title="2.6酉变换与酉矩阵"></a>2.6酉变换与酉矩阵</h2><p>首先，我们先定义什么内积，我们称$V$是 数域$P$上的线性空间，$V$到$P$的一个代数运算记为（$\alpha$,$\beta$），我们给这个运算起名为内积，可以认为是向量点乘之和。若满足下列条件：</p>
-<p><img src="/2021/11/18/secondcnm/21.PNG" alt="20"></p>
-<p><img src="/2021/11/18/secondcnm/22.PNG" alt="22"></p>
-<p>H：表示是共轭转置，既取共轭也取转置。</p>
-<p>则对于酉空间，$(x,y)=y^Hx,x和y是n维向量$,这个运算是在一个空间内的。</p>
-<p>给除了正交的定义在这里</p>
-<p>同时也给出了长度，我们会意识到一件事，就是线性空间是个向量空间，按照向量的定义：我们知道是长度和方向构成了向量，但截至到目前，我们对于线性空间内的元素并没有衡量大小的概念(从定义上他就没有大小比较这个概念)，但是对于方向我们是有要求的，比方说加法本质上就是在改变两个向量的方向，数乘本质上是在某一方向上伸长多少倍，我们对向量没有构成一个绝对意义上的长度概念。在定义1.6.2中，我们第一次给出了长度这个概念。</p>
-<p><img src="/2021/11/18/secondcnm/23.PNG" alt="23"></p>
-<p>上面定义了内积运算，从而定义了酉空间，这里给出了酉矩阵的概念.</p>
-<p>下面给出了一种理解，线性变换我们是都知道的，就是他把一个向量放缩和旋转，那如果对于我们现在来说，我们都知道内积的定义，就是向量之间的点乘，我们也知道点乘可以展开成两个向量的长度相乘再乘上cos夹角，也就是说当两个向量给定时，内积就表示夹角。</p>
-<p>因此，若存在两个已知的向量$\alpha \space  and \space  \beta$,我们对两个向量分别进行旋转和放缩即线性变化后，发现他们的夹角没变，我们就说明这个变换叫做酉变换，这也就是说酉变换强调角度，因为这里这个线性变换，你爱放缩不放缩，并不会影响我的夹角就可以。</p>
+                <h1 id="第三章Jordan标准形"><a href="#第三章Jordan标准形" class="headerlink" title="第三章Jordan标准形"></a>第三章Jordan标准形</h1><p>这一章可以这么理解，我们之前研究的都是元素为数的矩阵，现在研究元素为一元多项式的矩阵。</p>
+<p>一元多项式记为$f(\lambda)$,则$∂(f(\lambda))$=n,代表多项式的次数，最高次数对应得系数为1时，叫首一多项式。</p>
+<p>多项式也有加减乘除</p>
+<p><img src="/2021/11/30/thirdcnm/%E9%99%A4%E6%B3%95.PNG" alt="1"></p>
+<p>一般是用长除法去计算。</p>
+<p>若余式为0，则说明多项式$g(\lambda)整除f(\lambda)$,这里就是注意下说法的顺序。</p>
+<h2 id="最大公因式和最小公倍式"><a href="#最大公因式和最小公倍式" class="headerlink" title="最大公因式和最小公倍式"></a>最大公因式和最小公倍式</h2><p>这里是第一个重点，</p>
+<p>我们可以很容易的理解，在整除的情况下，$g(\lambda)$是$f(\lambda)$的因式，$f(\lambda)$是$g(\lambda)$的倍式。</p>
+<p>因此若$g(\lambda)$和$f(\lambda)$的任一公因式都是$d(\lambda)$的因式，且$d(\lambda)$为首一多项式，就说明$d(\lambda)$是$g(\lambda)$ 和$f(\lambda)$的最大公因式，记为$d(\lambda)$=$(f(\lambda),g(\lambda))$。且具有唯一性</p>
+<p>同理若多项式$\varphi(\lambda)$即是$g(\lambda)$的倍式，又是$f(\lambda)$的倍式，则就说明$\varphi(\lambda)$是$g(\lambda)$ 和$f(\lambda)$的最小公倍式，记为$\varphi (\lambda)$=$[f(\lambda),g(\lambda)]$。且具有唯一性</p>
+<p>这里的性质后面会在变换矩阵时频繁用到。</p>
+<h2 id="lambda-矩阵及其在相抵下的标准形"><a href="#lambda-矩阵及其在相抵下的标准形" class="headerlink" title="$\lambda$矩阵及其在相抵下的标准形"></a>$\lambda$矩阵及其在相抵下的标准形</h2><p><img src="/2021/11/30/thirdcnm/lambda%E7%9F%A9%E9%98%B5.PNG" alt="1"></p>
+<p>它也有子式，主子氏，顺序主子氏，代数余子式，伴随矩阵，这些所有的概念。</p>
+<p>这里我们要复习一下线性代数中的概念了，对于一个方阵而言，满秩为r，表示所有r+1阶的子式为0，表示行列式的值不为0，表示它可逆。</p>
+<p>因此，</p>
+<p><img src="/2021/11/30/thirdcnm/3.PNG" alt="1"></p>
+<p><img src="/2021/11/30/thirdcnm/4.PNG" alt="1"></p>
+<p><img src="/2021/11/30/thirdcnm/5.PNG" alt="1"></p>
+<p>因此矩阵A的特征矩阵总是满秩的，因为对于$矩阵\lambda I-A$来说$\abs{\lambda I-A} $不为0，因为矩阵肯定是会有特征值的，所以特征矩阵的行列式肯定没法为0，相当于方程一定要有解，所以方程就一定会存在，所以特征矩阵总是满rank的。</p>
+<p><img src="/2021/11/30/thirdcnm/6.PNG" alt="1"></p>
+<p>给出三种初等行变换，和之前学的一样，只不过是放在了lambda矩阵中，值得注意的是最后一个结论，左乘相当于行变换，右乘则是列变换。</p>
+<h3 id="相抵定义"><a href="#相抵定义" class="headerlink" title="相抵定义"></a>相抵定义</h3><p>第二章给出了数字矩阵的相抵定义，这里给出lambda矩阵的，其实是一样的。</p>
+<p><img src="/2021/11/30/thirdcnm/7.PNG" alt="1"></p>
+<p>这里其实就明白了，所谓的相抵就是两个矩阵彼此可以通过初等变换相互转换。和我们对于数字矩阵的定义真的一样。只不过，相抵是针对非方阵的说法的，之前没太重视。</p>
+<h3 id="相抵的充分必要条件"><a href="#相抵的充分必要条件" class="headerlink" title="相抵的充分必要条件"></a>相抵的充分必要条件</h3><p>但是相抵是两个矩阵之间的性质，相抵就是两个矩阵经过初等变换之后相等的性质，那么我们有如下的充分必要条件去证明相抵。</p>
+<p><u>利用行列式因子</u></p>
+<p><img src="/2021/11/30/thirdcnm/9.PNG" alt="1"></p>
+<p>结论：<strong>1.相抵的lambda矩阵既有相同的各阶行列式因子</strong></p>
+<p><strong>2.相抵的lambda矩阵既有相同的不变因子</strong></p>
+<p><strong>3.相抵的lambda矩阵A,B:存在两个可逆矩阵$P_{m<em>m}$,$Q_{n</em>n}$使得$A=PBQ$</strong></p>
+<p><strong>4.相抵的lambda矩阵既有相同的rank和初等因子</strong></p>
+<p><u>再附赠一个定理</u>：证明时用到了行列式因子</p>
+<p><img src="/2021/11/30/thirdcnm/14.PNG" alt="1"></p>
+<p>可逆，说明n阶行列式不为0，n-1阶行列式不为0……….</p>
+<p>因此，行列式因子只能全是1，因此，根据</p>
+<p><img src="/2021/11/30/thirdcnm/wechat.jpg" alt="1"></p>
+<p>不变因子也全是1，因为A和一个单位阵相抵，再根据相抵定义，就得出结论了。</p>
+<h3 id="相抵下的标准形"><a href="#相抵下的标准形" class="headerlink" title="相抵下的标准形"></a>相抵下的标准形</h3><p>顺理成章地，那我们一定有个固定的格式规范，即标准形。</p>
+<p><img src="/2021/11/30/thirdcnm/8.PNG" alt="1"></p>
+<p>证明就不赘述了，这个其实结合数字矩阵也能想通，这儿需要注意的是对角线上的元素要前一个可以整除后一个，一定要化成这样，这个化简其实是有难度的。</p>
+<p>我们也称对角线上的哪些非零元素为**<u>不变因子</u>**。</p>
+<p>smith标准形想要求出，难度不小，主要原因是我们也许可能能化成只有对角线上有元素的形式，但是，保证前一个能整除后一个就要靠运气了，也就是说，我们不太好求出不变因子，不变因子是唯一的。</p>
+<h4 id="初等因子"><a href="#初等因子" class="headerlink" title="初等因子"></a>初等因子</h4><p>先定义初等因子：</p>
+<p><img src="/2021/11/30/thirdcnm/10.PNG" alt="1"></p>
+<p>这里面，我们发现，初等因子是构成不变因子的。为此，我们可以去设想，不变因子如果难取，我们就可以去求初等因子。</p>
+<p>依靠下面的定理</p>
+<p><img src="/2021/11/30/thirdcnm/11.PNG" alt="1"></p>
+<p>这个就比较好做了，原因是，我们可以把复杂的矩阵变成一些块对角矩阵，块最好是一维或二维块，那么对维数较低的矩阵，我们是可以很好的去求取他们的不变因子，从而获得初等因子，从而再获得整个矩阵的全部初等因子。</p>
+<p>那么不变因子和初等因子之间的转换如下：</p>
+<p><img src="/2021/11/30/thirdcnm/12.PNG" alt="1"></p>
+<p><img src="/2021/11/30/thirdcnm/13.PNG" alt="1"></p>
+<h2 id="矩阵相似"><a href="#矩阵相似" class="headerlink" title="矩阵相似"></a>矩阵相似</h2><p>对于数字矩阵，我们都知道相似的条件，矩阵相似是针对$n*n$的方阵的，定义是若存在$B=P^{-1}AP$,就说明A和B相似</p>
+<p>这里我们给出了新的方式和方法来判断相似，我们打算从数字矩阵的特征矩阵下手，从特征矩阵反推出数字矩阵相似。</p>
+<p>直接给出结论：</p>
+<p><strong><u>n阶矩阵A和B相似的充分必要条件是它们的特征矩阵$\lambda I-A$和$\lambda I-B$相抵.</u></strong></p>
+<p>然后相抵的充分必要条件，前面也给出了，接着改写就可以，这里就不介绍了。</p>
+<h2 id="Jordan标准形"><a href="#Jordan标准形" class="headerlink" title="Jordan标准形"></a>Jordan标准形</h2><p>jordan标准形本身是现代控制理论中解决状态空间描述时提出的，当时针对无法化成方阵的矩阵A就给他变成jordan标准形。</p>
+<p>这里先给出jordan标准形最重要的定理：A是一个复数域上的方阵，那么它一定可以和Jordan形矩阵相似</p>
+<p><img src="/2021/11/30/thirdcnm/15.PNG" alt="1"></p>
+<p>先看jordan矩阵如何求？</p>
+<p><img src="/2021/11/30/thirdcnm/16.PNG" alt="1"></p>
+<p>方法是:先去求矩阵A的初等因子，也就是求他的特征矩阵的初等因子，每个初等因子对应一个约当块，像$\lambda-1$这个初等因子就表示[1],$(\lambda-1)^2$就是[1，1；0，1]</p>
+<p>因此，我们发现如果对于A他的初等因子都是一次的，那么约当矩阵就变成了一个对角矩阵，即A与一个对角阵相似。</p>
+<h2 id="Cayley-Hamilton定理与最小多项式"><a href="#Cayley-Hamilton定理与最小多项式" class="headerlink" title="Cayley-Hamilton定理与最小多项式"></a>Cayley-Hamilton定理与最小多项式</h2><p><img src="/2021/11/30/thirdcnm/17.PNG" alt="1"></p>
+<p><img src="/2021/11/30/thirdcnm/18.PNG" alt="1"></p>
+<p><img src="/2021/11/30/thirdcnm/20.PNG" alt="1"></p>
+<p>CH定理简介：求矩阵A的特征矩阵的行列式为0的方程叫特征方程，CH定理指出A满足其自身的特征方程。</p>
+<p>CH定理就是一般用来计算方便的。</p>
 
                 
             </div>
@@ -586,7 +571,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://Obnayuf.github.io/2021/11/18/secondcnm/">https://Obnayuf.github.io/2021/11/18/secondcnm/</a>
+                    <a href="https://Obnayuf.github.io/2021/11/30/thirdcnm/">https://Obnayuf.github.io/2021/11/30/thirdcnm/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -795,9 +780,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/11/30/thirdcnm/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="矩阵论第三节">
+                        
+                        <span class="card-title">矩阵论第三节</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    数理基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/">
+                        <span class="chip bg-color">矩阵论</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/11/23/optimal-control-2/">
                     <div class="card-image">
@@ -815,57 +851,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-23
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    数理基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6/">
-                        <span class="chip bg-color">最优控制</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/11/13/optimal-control/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="浙大最优控制第一节">
-                        
-                        <span class="card-title">浙大最优控制第一节</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-23
                             </span>
                         <span class="publish-author">
                             
