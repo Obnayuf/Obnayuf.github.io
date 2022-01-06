@@ -488,6 +488,15 @@
 <p>tips:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">conda create -n name python=3.7</span><br><span class="line">conda activate name</span><br><span class="line">conda deactivate name</span><br><span class="line">conda remove -n name --all</span><br><span class="line">#之后还需要手动删除</span><br><span class="line">#如何打开jupyter notebook在指定目录</span><br><span class="line">#在目录下shift右键进入power shell 输入jupyter notebook</span><br></pre></td></tr></table></figure>
 
+<h3 id="server-render"><a href="#server-render" class="headerlink" title="server render"></a>server render</h3><p>假如你通过ssh连接server，在server上运行（i.e., <code>python main.py</code>）以下代码（关键点在使用<code>env.render()</code>保存录像）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># main.py</span><br><span class="line"></span><br><span class="line">import gym</span><br><span class="line">from gym import wrappers</span><br><span class="line"></span><br><span class="line">env = gym.make(&#x27;CartPole-v0&#x27;)</span><br><span class="line">env = wrappers.Monitor(env, &#x27;video&#x27;)</span><br><span class="line">for i_episode in range(20):</span><br><span class="line">    observation = env.reset()</span><br><span class="line">    for t in range(100):</span><br><span class="line">        env.render()</span><br><span class="line">        action = env.action_space.sample()</span><br><span class="line">        observation, reward, done, info = env.step(action)</span><br><span class="line">        if done:</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
+
+
+
+<p>那么你会得到一个报错，报错的信息大概是<code>pyglet.canvas.xlib.NoSuchDisplayException: Cannot connect to &quot;None&quot;</code>。</p>
+<p>原因大概是<code>env.render()</code><strong>需要图形界面</strong>（就是弹出来的那个框框），而当你使用ssh连接server时是没有图形界面的。因此我们需要一个<strong>虚拟的图形界面</strong>，而<code>xvfb-run</code>就是一个提供虚拟图形界面的工具。</p>
+<p>所以我们需要使用<code>xvfb-run -a -s &quot;-screen 0 1400x900x24 +extension RANDR&quot; -- python main.py</code>来运行我们的代码。</p>
+<p>一般来说，运行上述指令是会报错的，报错的信息大概是<code>pyglet requires an X server with GLX</code>，主要原因在于<strong>显卡驱动以及cuda的安装有问题</strong>，没有加<code>--no-opengl</code>的flag。解决方案可以参考<a target="_blank" rel="noopener" href="https://gist.github.com/8enmann/931ec2a9dc45fde871d2139a7d1f2d78">这里</a>和<a target="_blank" rel="noopener" href="https://davidsanwald.github.io/2016/11/13/building-tensorflow-with-gpu-support.html">这里</a></p>
 
                 
             </div>
@@ -731,9 +740,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="浙大矩阵论第一节">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="矩阵论第一节">
                         
-                        <span class="card-title">浙大矩阵论第一节</span>
+                        <span class="card-title">矩阵论第一节</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1013,7 +1022,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2021</span>
+                <span id="year">2019-2022</span>
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">Obnay Fu</a>
