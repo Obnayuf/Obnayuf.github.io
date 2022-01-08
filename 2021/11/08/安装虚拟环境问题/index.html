@@ -497,6 +497,7 @@
 <p>原因大概是<code>env.render()</code><strong>需要图形界面</strong>（就是弹出来的那个框框），而当你使用ssh连接server时是没有图形界面的。因此我们需要一个<strong>虚拟的图形界面</strong>，而<code>xvfb-run</code>就是一个提供虚拟图形界面的工具。</p>
 <p>所以我们需要使用<code>xvfb-run -a -s &quot;-screen 0 1400x900x24 +extension RANDR&quot; -- python main.py</code>来运行我们的代码。</p>
 <p>一般来说，运行上述指令是会报错的，报错的信息大概是<code>pyglet requires an X server with GLX</code>，主要原因在于<strong>显卡驱动以及cuda的安装有问题</strong>，没有加<code>--no-opengl</code>的flag。解决方案可以参考<a target="_blank" rel="noopener" href="https://gist.github.com/8enmann/931ec2a9dc45fde871d2139a7d1f2d78">这里</a>和<a target="_blank" rel="noopener" href="https://davidsanwald.github.io/2016/11/13/building-tensorflow-with-gpu-support.html">这里</a></p>
+<p>sss</p>
 
                 
             </div>
